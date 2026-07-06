@@ -8,7 +8,7 @@ This document describes the API endpoints, parameters, request/response formats,
 
 All requests must be sent to:
 ```text
-http://localhost:2000/api
+https://gihub-users-analysis.onrender.com/api
 ```
 
 ---
@@ -157,14 +157,6 @@ Fetches the latest GitHub profile from the public API, performs analytical calcu
 ### Purpose
 Returns all analyzed GitHub profiles stored in the local SQLite database. Supports searching, sorting, and pagination.
 
-### Query Parameters
-| Parameter | Type | Required | Default | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| `page` | number | No | `1` | Page number for pagination |
-| `limit` | number | No | `10` | Number of items per page |
-| `search` | string | No | `""` | Search keyword (matches username or name) |
-| `sort` | string | No | `"username"` | Sort column (`username`, `name`, `public_repos`, `followers`, `popularity_score`, `account_age_years`, `created_at`) |
-| `order` | string | No | `"asc"` | Sort order (`asc`, `desc`) |
 
 ### Request Example
 `GET http://localhost:2000/api/github?page=1&limit=5&sort=popularity_score&order=desc&search=octo`
@@ -385,7 +377,7 @@ Copy and save the JSON below into a file (e.g., `GithubAnalyzer.postman_collecti
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:2000/api/github?page=1&limit=10&sort=popularity_score&order=desc",
+          "raw": "http://localhost:2000/api/github",
           "protocol": "http",
           "host": ["localhost"],
           "port": "2000",

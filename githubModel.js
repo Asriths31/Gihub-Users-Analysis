@@ -80,9 +80,9 @@ export async function getAllProfiles({ page = 1, limit = 10, search = "", sort =
 
   return {
     total,
-    page: parsedPage,
-    limit: parsedLimit,
-    totalPages: Math.ceil(total / parsedLimit),
+    // page: parsedPage,
+    // limit: parsedLimit,
+    // totalPages: Math.ceil(total / parsedLimit),
     data
   };
 }
